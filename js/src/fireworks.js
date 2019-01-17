@@ -85,7 +85,8 @@ if (canvasEl) {
 		numberOfParticules = 30,
 		pointerX = 0,
 		pointerY = 0,
-		tap = "touchstart",
+    tap = "mousedown",
+    tap_phone = "touchstart",
 		colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"],
 		setCanvasSize = debounce(function() {
 			canvasEl.width = 2 * window.innerWidth, canvasEl.height = 2 * window.innerHeight, canvasEl.style.width = window.innerWidth +
@@ -101,6 +102,10 @@ if (canvasEl) {
 		"sidebar" !== e.target.id && "toggle-sidebar" !== e.target.id && "A" !== e.target.nodeName && "IMG" !== e.target.nodeName &&
 			(render.play(), updateCoords(e), animateParticules(pointerX, pointerY))
 	}, !1), setCanvasSize(), window.addEventListener("resize", setCanvasSize, !1)
+  document.addEventListener(tap_phone, function(e) {
+    "sidebar" !== e.target.id && "toggle-sidebar" !== e.target.id && "A" !== e.target.nodeName && "IMG" !== e.target.nodeName &&
+    (render.play(), updateCoords(e), animateParticules(pointerX, pointerY))
+  }, !1), setCanvasSize(), window.addEventListener("resize", setCanvasSize, !1)
 }
 "use strict";
 
@@ -189,8 +194,9 @@ if (canvasEl) {
 		numberOfParticules = 30,
 		pointerX = 0,
 		pointerY = 0,
-		tap = "touchstart",
-		colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"],
+		tap = "mousedown",
+    tap_phone = "touchstart",
+    colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"],
 		setCanvasSize = debounce(function() {
 			canvasEl.width = 2 * window.innerWidth, canvasEl.height = 2 * window.innerHeight, canvasEl.style.width = window.innerWidth +
 				"px", canvasEl.style.height = window.innerHeight + "px", canvasEl.getContext("2d").scale(2, 2)
@@ -205,4 +211,8 @@ if (canvasEl) {
 		"sidebar" !== e.target.id && "toggle-sidebar" !== e.target.id && "A" !== e.target.nodeName && "IMG" !== e.target.nodeName &&
 			(render.play(), updateCoords(e), animateParticules(pointerX, pointerY))
 	}, !1), setCanvasSize(), window.addEventListener("resize", setCanvasSize, !1)
+  document.addEventListener(tap_phone, function(e) {
+    "sidebar" !== e.target.id && "toggle-sidebar" !== e.target.id && "A" !== e.target.nodeName && "IMG" !== e.target.nodeName &&
+    (render.play(), updateCoords(e), animateParticules(pointerX, pointerY))
+  }, !1), setCanvasSize(), window.addEventListener("resize", setCanvasSize, !1)
 };
